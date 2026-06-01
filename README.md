@@ -2,13 +2,18 @@
 
 Synthesizable VGA controller core written in Verilog, paired with two testbenches (static RGB, and animated RGB). The testing environment bridges hardware description language (HDL) simulation with a custom, cycle-accurate RISC-V (RV32I) software emulator via Cocotb and Python ctypes.
 
+## Quick Preview
+[preview gif](./preview.gif)
+
 ## System Architecture
 
 The testbench verify hardware-software co-design by executing compiled RISC-V instructions inside a C-based architectural emulator while simultaneously driving a hardware VGA controller simulation.
 
 1. Hardware (vga_core.v): Generates structural horizontal and vertical timing synchronization signals (h_sync, v_sync) and controls pixel coordinate streams for display pipes.
-2. Software Emulator (extern/RV32I-emu): An independent C library that maintains the RISC-V architectural state, processes instructions, and writes frame updates directly to a shared 42MiB DRAM allocation, easily can be modified to more or less in the proper C program before compiling (see [dram.h](./extern/RV32I-emu/includes/dram.h)).
+2. Software Emulator (extern/RV32I-emu): An [independent C library](https://codeberg.org/wirtnel/RV32I-emu) that maintains the RISC-V architectural state, processes instructions, and writes frame updates directly to a shared 42MiB DRAM allocation, easily can be modified to more or less in the proper C program before compiling (see [dram.h](./extern/RV32I-emu/includes/dram.h)).
 3. Verification Bridge (bad-riscv.py): A Cocotb testbench that instantiates the hardware simulator, binds the compiled C emulator via dynamic runtime linkage (ctypes), and renders pixel buffers onto a host-side UI using Pygame and NumPy. There is also testbench.py, but it is mostly a legacy test I did first.
+
+> You can, and I highly recommend, use [GTKwave](https://gtkwave.sourceforge.net/) for proper testing, I also helped myself quite a lot with [my own TUI for translating RISCV hex instructions](https://codeberg.org/wirtnel/riscv-tui)
 
 ## Repository Layout
 
