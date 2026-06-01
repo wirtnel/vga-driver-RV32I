@@ -1,0 +1,9 @@
+venv/
+.venv/
+*.mp4
+*.bin
+sim_build/
+__pycache__/
+results.xml
+*.vcd
+*.fst

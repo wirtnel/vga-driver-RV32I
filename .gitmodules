@@ -1,0 +1,3 @@
+[submodule "extern/RV32I-emu"]
+	path = extern/RV32I-emu
+	url = ssh://git@codeberg.org/wirtnel/RV32I-emu.git

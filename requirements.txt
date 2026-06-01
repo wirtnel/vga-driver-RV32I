@@ -1,0 +1,5 @@
+cocotb==2.0.1
+find_libpython==0.5.1
+numpy==2.4.6
+opencv-python==4.13.0.92
+pygame==2.6.1
