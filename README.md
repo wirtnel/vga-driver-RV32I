@@ -1,9 +1,16 @@
 # RV32I VGA Controller and Co-Simulation Environment
 
+<p align="center">
+    <a href="https://codeberg.org/wirtnel/vga-driver-RV32I">
+        <img src="https://img.shields.io/badge/Maintained_on_Codeberg-2185D0?logo=codeberg&logoColor=fff" alt="Codeberg" /></a>
+    <a href="https://github.com/wirtnel/vga-driver-RV32I">
+        <img src="https://img.shields.io/badge/Mirror_on_GitHub-%23121011.svg?logo=github&logoColor=white" alt="GitHub Mirror" /></a>
+</p>
+
 Synthesizable VGA controller core written in Verilog, paired with two testbenches (static RGB, and animated RGB). The testing environment bridges hardware description language (HDL) simulation with a custom, cycle-accurate RISC-V (RV32I) software emulator via Cocotb and Python ctypes.
 
 ## Quick Preview
-[preview gif](./preview.gif)
+![preview gif](./preview.gif)
 
 ## System Architecture
 
@@ -90,11 +97,11 @@ make
 
 Copyright (C) 2026 wirtnel
 
-This project, including the core hardware driver configurations and verification 
-environments, is free software: you can redistribute it and/or modify it under 
-the terms of the GNU General Public License as published by the Free Software 
+This project, including the core hardware driver configurations and verification
+environments, is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
 Foundation, either version 3 of the License, or (at your option) any later version.
 
-The `extern/RV32I-emu` submodule is an independent repository maintained under 
-the same author copyright and GPLv3 terms. See individual files and the 
+The `extern/RV32I-emu` submodule is an independent repository maintained under
+the same author copyright and GPLv3 terms. See individual files and the
 accompanying LICENSE file for details.
